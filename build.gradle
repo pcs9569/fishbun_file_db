@@ -1,0 +1,41 @@
+plugins {
+	id 'org.springframework.boot' version '2.3.8.RELEASE'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+	id 'war'
+}
+
+bootWar {
+	archiveBaseName = "test-api"
+	archiveFileName = "test-api.war"
+	archiveVersion = "0.0.0"
+}
+
+
+group = 'fish-bun'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+//	runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
+	implementation group: 'org.mariadb.jdbc', name: 'mariadb-java-client', version: '2.4.1'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
+	testImplementation('org.springframework.boot:spring-boot-starter-test') {
+		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+	}
+
+//	파일 처리와 관련된 여러 가지 기능을 제공해 주는 라이브러리를 추가
+	compile group: 'commons-io', name: 'commons-io', version: '2.6' /* Apache Commons IO */
+	compile group: 'commons-fileupload', name: 'commons-fileupload', version: '1.3.3' /* Apache Commons File Upload */
+}
+
+test {
+	useJUnitPlatform()
+}
