@@ -6,20 +6,20 @@ public class File {
     private String file_origin_name;
     private String file_save_name;
     private int file_size;
-    private char file_delete_yn;
+    private String file_delete_yn;
     private String file_reg_date;
     private String file_del_date;
 
-    public File(int file_id, int sto_id, String file_origin_name, String file_save_name, int file_size, char file_delete_yn, String file_reg_date, String file_del_date) {
-        this.file_id = file_id;
-        this.sto_id = sto_id;
-        this.file_origin_name = file_origin_name;
-        this.file_save_name = file_save_name;
-        this.file_size = file_size;
-        this.file_delete_yn = file_delete_yn;
-        this.file_reg_date = file_reg_date;
-        this.file_del_date = file_del_date;
-    }
+//    public File(int file_id, int sto_id, String file_origin_name, String file_save_name, int file_size, char file_delete_yn, String file_reg_date, String file_del_date) {
+//        this.file_id = file_id;
+//        this.sto_id = sto_id;
+//        this.file_origin_name = file_origin_name;
+//        this.file_save_name = file_save_name;
+//        this.file_size = file_size;
+//        this.file_delete_yn = file_delete_yn;
+//        this.file_reg_date = file_reg_date;
+//        this.file_del_date = file_del_date;
+//    }
 
     public int getFile_id() {
         return file_id;
@@ -61,11 +61,11 @@ public class File {
         this.file_size = file_size;
     }
 
-    public char getFile_delete_yn() {
+    public String getFile_delete_yn() {
         return file_delete_yn;
     }
 
-    public void setFile_delete_yn(char file_delete_yn) {
+    public void setFile_delete_yn(String file_delete_yn) {
         this.file_delete_yn = file_delete_yn;
     }
 

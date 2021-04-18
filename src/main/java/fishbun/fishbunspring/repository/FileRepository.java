@@ -5,7 +5,7 @@ import fishbun.fishbunspring.domain.File;
 import java.util.List;
 
 public interface FileRepository {
-    File insert(List<File> fileList);
+    int insert(List<File> fileList);
     File selectById(Integer file_id);
     int deleteFile(Integer file_id);
     List<File> selectByStoId(Integer sto_id);
